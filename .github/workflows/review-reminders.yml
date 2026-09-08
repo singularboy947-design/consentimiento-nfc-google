@@ -14,8 +14,17 @@ jobs:
           APP_URL: ${{ secrets.APP_URL }}
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: |
+          set -euo pipefail
+          APP_URL=$(printf '%s' "${APP_URL:-}" | tr -d '\r\n' | sed -e 's/^[[:space:]"'\'']*//' -e 's/[[:space:]"'\'']*$//' -e 's:/*$::')
+          CRON_SECRET=$(printf '%s' "${CRON_SECRET:-}" | tr -d '\r\n' | sed -e 's/^[[:space:]"'\'']*//' -e 's/[[:space:]"'\'']*$//')
           if [ -z "$APP_URL" ] || [ -z "$CRON_SECRET" ]; then
             echo "Aún no hay secrets APP_URL / CRON_SECRET. El form ya funciona; el mail a las 2h se activa cuando los pongas."
             exit 0
           fi
-          curl -fsS "${APP_URL%/}/api/cron/review-reminders?secret=${CRON_SECRET}"
+          case "$APP_URL" in
+            http://*|https://*) ;;
+            *) APP_URL="https://${APP_URL}" ;;
+          esac
+          echo "Pinging ${APP_URL}/api/cron/review-reminders"
+          curl -fsS -G "${APP_URL}/api/cron/review-reminders" --data-urlencode "secret=${CRON_SECRET}"
+          echo
