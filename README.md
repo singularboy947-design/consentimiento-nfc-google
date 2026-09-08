@@ -39,7 +39,7 @@ Google **no dice** quién publicó una reseña sin la API de Business Profile (e
 | `GOOGLE_REVIEW_URL` | `https://g.page/r/8WegaqLuEK2LkdUP46GM-Aw/review` |
 | `GMAIL_USER` | `singularboy947@gmail.com` |
 | `GMAIL_APP_PASSWORD` | la de 16 caracteres |
-| `APP_URL` | la URL `https://….vercel.app` cuando la tengas (para el píxel y el botón del mail) |
+| `APP_URL` | opcional: Vercel la infiere. Cuando tengas la URL, pégala aquí y también en GitHub Secrets para el cron |
 
 4. Storage → Neon → Create Database **o** crea Neon a mano y pega `DATABASE_URL`.
 5. En Neon → SQL Editor → pega y ejecuta [`sql/schema.sql`](sql/schema.sql).

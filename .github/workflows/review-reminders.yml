@@ -1,0 +1,21 @@
+name: Review reminders
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel cron
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$APP_URL" ] || [ -z "$CRON_SECRET" ]; then
+            echo "Aún no hay secrets APP_URL / CRON_SECRET. El form ya funciona; el mail a las 2h se activa cuando los pongas."
+            exit 0
+          fi
+          curl -fsS "${APP_URL%/}/api/cron/review-reminders?secret=${CRON_SECRET}"
