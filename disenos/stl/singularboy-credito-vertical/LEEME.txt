@@ -1,0 +1,6 @@
+Tarjeta NFC crédito vertical — Singular Boy
+===========================================
+
+Solo 5 estrellas + G de Google. Sin TAP, sin atril, más fina que la cartera.
+Imprime agrupando 01_cuerpo + 02_acento. Pausa capa 9 (1.80 mm).
+Programa el chip DESPUÉS con NFC Tools → URL de Vercel del formulario.

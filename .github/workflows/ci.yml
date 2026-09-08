@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+          DASHBOARD_PASSWORD: ci-password
+          CRON_SECRET: ci-secret
+          GOOGLE_REVIEW_URL: https://g.page/r/8WegaqLuEK2LkdUP46GM-Aw/review
+          GMAIL_USER: singularboy947@gmail.com
+          GMAIL_APP_PASSWORD: not-used-in-build
+          APP_URL: https://example.vercel.app

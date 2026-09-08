@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1100" width="540" height="1100">
+  <rect width="540" height="1100" fill="#F3EEE4"/>
+  <text x="270" y="48" text-anchor="middle" fill="#1C1915" font-family="Georgia, serif" font-size="22">Singular Boy · crédito vertical</text>
+  <rect x="270.0" y="80.0" width="539.8" height="856.0" rx="32.0" fill="#141416"/>
+  <polygon points="375.9,149.5 381.7,165.0 398.2,165.7 385.3,176.0 389.7,192.0 375.9,182.9 362.1,192.0 366.5,176.0 353.6,165.7 370.1,165.0" fill="#E2B43A"/> <polygon points="457.9,126.5 465.2,146.0 486.0,146.9 469.7,159.8 475.2,179.9 457.9,168.4 440.6,179.9 446.1,159.8 429.8,146.9 450.6,146.0" fill="#E2B43A"/> <polygon points="539.9,100.5 549.4,125.9 576.5,127.1 555.3,144.0 562.5,170.1 539.9,155.2 517.3,170.1 524.5,144.0 503.3,127.1 530.4,125.9" fill="#E2B43A"/> <polygon points="621.9,126.5 629.2,146.0 650.0,146.9 633.7,159.8 639.2,179.9 621.9,168.4 604.6,179.9 610.1,159.8 593.8,146.9 614.6,146.0" fill="#E2B43A"/> <polygon points="703.9,149.5 709.7,165.0 726.2,165.7 713.3,176.0 717.7,192.0 703.9,182.9 690.1,192.0 694.5,176.0 681.6,165.7 698.1,165.0" fill="#E2B43A"/>
+  <g transform="translate(404.900 313.000) scale(15.00000)"><path d="M9.001 10.71V7.362h8.424c.126.567.225 1.098.225 1.845 0 5.139-3.447 8.793-8.64 8.793-4.968 0-9-4.032-9-9s4.032-9 9-9c2.43 0 4.464.891 6.021 2.349l-2.556 2.484c-.648-.612-1.782-1.332-3.465-1.332-2.979 0-5.409 2.475-5.409 5.508s2.43 5.508 5.409 5.508c3.447 0 4.716-2.385 4.95-3.798H9.001v-.009z" fill="#E2B43A"/></g>
+  <circle cx="539.9" cy="448.0" r="140.0" fill="none" stroke="#E2B43A" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.55"/>
+  <text x="270" y="1020" text-anchor="middle" fill="#1C1915" font-family="Georgia, serif" font-size="16">54 × 85,6 × 2,8 mm · NFC Ø25 bajo la G</text>
+  <text x="270" y="1048" text-anchor="middle" fill="#7A6A52" font-family="Georgia, serif" font-size="13">Pozo Ø28 · asiento Ø26 · mira Ø24 · pausa capa 9</text>
+</svg>
