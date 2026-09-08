@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { isAdmin } from "@/lib/auth";
 import { sql } from "@/lib/db";
 import { AdminConsentList, type AdminConsentListItem } from "@/components/AdminConsentList";
+import { AdminLogout } from "@/components/AdminLogout";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +29,10 @@ export default async function AdminPage() {
   return (
     <main>
       <div className="card admin">
-        <h1>Consentimientos</h1>
+        <div className="admin-head">
+          <h1>Consentimientos</h1>
+          <AdminLogout />
+        </div>
         <p className="sub">{list.length} personas · toca un nombre para ver la ficha completa</p>
         {list.length === 0 && (
           <p className="hint">Aún no hay consentimientos. Cuando alguien envíe el formulario, sale aquí.</p>

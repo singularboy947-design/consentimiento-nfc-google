@@ -21,7 +21,7 @@ h1 { font-size: 1.45rem; margin: 8px 0 6px; }
 .sub, .studio, .hint, .lbl { color: var(--muted); font-size: 0.92rem; }
 .studio { margin: 0 0 18px; line-height: 1.4; }
 label { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; font-size: 0.88rem; }
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="month"], input:not([type]) {
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="month"], input[type="password"], input:not([type]) {
   background: #0f0f10;
   border: 1px solid var(--line);
   color: var(--ink);
@@ -83,6 +83,10 @@ details p { color: var(--muted); line-height: 1.45; }
 table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
 th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
 .admin { max-width: 720px; overflow-x: auto; }
+.admin-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.admin-head h1 { margin: 8px 0 6px; }
+.admin-logout { margin: 0; }
+.admin-logout .ghost { margin: 0; }
 .consent-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
 .consent-row {
   display: flex;

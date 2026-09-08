@@ -3,7 +3,7 @@
 App para **JOSE ANTONIO FERNÁNDEZ TATTOO**. El cliente toca la tarjeta NFC, rellena el consentimiento (ES/EN), firma, acepta el texto legal y queda guardado. A las **2 horas** se envía el recordatorio de reseña desde `singularboy947@gmail.com`.
 
 - Formulario: `/`
-- Panel: `/admin`
+- Panel: `/admin` (login: `GMAIL_USER` + `DASHBOARD_PASSWORD`)
 - Tarjeta 3D: `disenos/stl/singularboy-credito-vertical/`
 
 ## Gmail: no hace falta API de Google ni espera de verificación
@@ -35,9 +35,10 @@ Google **no dice** quién publicó una reseña sin la API de Business Profile (e
 |---|---|
 | `DATABASE_URL` | Connection string de Neon (pooled, con `sslmode=require`) |
 | `DASHBOARD_PASSWORD` | contraseña del panel (la eliges tú) |
+| `GMAIL_USER` | `singularboy947@gmail.com` (también es el **email de login** del panel) |
+| `ADMIN_EMAIL` | opcional; si no está, el login usa `GMAIL_USER` |
 | `CRON_SECRET` | cadena larga aleatoria |
 | `GOOGLE_REVIEW_URL` | `https://g.page/r/8WegaqLuEK2LkdUP46GM-Aw/review` |
-| `GMAIL_USER` | `singularboy947@gmail.com` |
 | `GMAIL_APP_PASSWORD` | la de 16 caracteres |
 | `APP_URL` | opcional: Vercel la infiere. Cuando tengas la URL, pégala aquí y también en GitHub Secrets para el cron |
 

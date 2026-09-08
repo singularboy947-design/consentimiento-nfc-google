@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AdminLogout } from "@/components/AdminLogout";
 
 export type AdminConsentDetailData = {
   id: string;
@@ -69,9 +70,12 @@ export function AdminConsentDetail({ row }: { row: AdminConsentDetailData }) {
 
   return (
     <div className="ficha">
-      <a className="back" href="/admin">
-        ← Todos los consentimientos
-      </a>
+      <div className="admin-head">
+        <a className="back" href="/admin">
+          ← Todos los consentimientos
+        </a>
+        <AdminLogout />
+      </div>
       <p className="num-lg">#{String(row.n).padStart(3, "0")}</p>
       <h1>{row.full_name}</h1>
       <p className="sub">{new Date(row.created_at).toLocaleString("es-ES")} · {row.locale.toUpperCase()}</p>
