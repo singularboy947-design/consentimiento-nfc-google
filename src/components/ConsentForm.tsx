@@ -128,7 +128,7 @@ export function ConsentForm() {
       </label>
       <label>
         {copy.birthDate}
-        <input name="birthDate" type="date" required />
+        <input name="birthDate" type="date" required className="birth" />
       </label>
       <label>
         {copy.address}
@@ -146,7 +146,7 @@ export function ConsentForm() {
         {copy.bodyZone}
         <input name="bodyZone" required />
       </label>
-      <div className="row3">
+      <div className="inks">
         <label>
           {copy.inkBrand}
           <input name="inkBrand" />
@@ -155,9 +155,9 @@ export function ConsentForm() {
           {copy.inkLot}
           <input name="inkLot" />
         </label>
-        <label>
+        <label className="span2">
           {copy.inkExpiry}
-          <input name="inkExpiry" />
+          <input name="inkExpiry" type="month" />
         </label>
       </div>
       <label className="check">

@@ -21,16 +21,30 @@ h1 { font-size: 1.45rem; margin: 8px 0 6px; }
 .sub, .studio, .hint, .lbl { color: var(--muted); font-size: 0.92rem; }
 .studio { margin: 0 0 18px; line-height: 1.4; }
 label { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; font-size: 0.88rem; }
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input:not([type]) {
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="month"], input:not([type]) {
   background: #0f0f10;
   border: 1px solid var(--line);
   color: var(--ink);
   border-radius: 10px;
   padding: 12px;
   font-size: 16px;
+  width: 100%;
+  min-height: 48px;
+  color-scheme: dark;
 }
-.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-@media (max-width: 520px) { .row3 { grid-template-columns: 1fr; } }
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="month"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  cursor: pointer;
+  filter: invert(0.88);
+  width: 22px;
+  height: 22px;
+}
+.inks { display: grid; grid-template-columns: 1fr; gap: 0 10px; }
+@media (min-width: 560px) {
+  .inks { grid-template-columns: 1fr 1fr; }
+  .inks .span2 { grid-column: 1 / -1; }
+}
 .check { flex-direction: row; align-items: center; gap: 10px; }
 .check input { width: 18px; height: 18px; }
 .langs { display: flex; gap: 8px; }
