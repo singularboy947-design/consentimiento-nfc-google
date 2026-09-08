@@ -6,6 +6,7 @@ import { buildConsentPdf } from "@/lib/pdf";
 import type { Locale } from "@/lib/legal";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
@@ -27,7 +28,7 @@ export async function POST(req: NextRequest) {
 
     const token = randomBytes(24).toString("hex");
     const createdAt = new Date();
-    const reviewAt = new Date(createdAt.getTime());
+    const reviewAt = new Date(createdAt.getTime() + 2 * 60 * 60 * 1000);
     const isMinor = Boolean(b.isMinor);
     const pdf = await buildConsentPdf({
       locale,
