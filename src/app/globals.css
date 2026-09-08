@@ -85,3 +85,17 @@ th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line
 .admin { max-width: 960px; overflow-x: auto; }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: #555; }
 .dot.yes { background: #3d9a6a; }
+.consent-list { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.consent-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+}
+.consent-card header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
+.consent-card a { color: var(--gold); font-size: 0.9rem; }
+.job { display: grid; grid-template-columns: 1fr; gap: 0 10px; }
+.job .go { margin-top: 8px; }
+@media (min-width: 640px) {
+  .job { grid-template-columns: 1fr 1fr; }
+  .job .go { grid-column: 1 / -1; }
+}

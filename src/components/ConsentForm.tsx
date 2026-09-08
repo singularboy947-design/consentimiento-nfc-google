@@ -77,10 +77,6 @@ export function ConsentForm() {
         address: fd.get("address"),
         phone: fd.get("phone"),
         email: fd.get("email"),
-        bodyZone: fd.get("bodyZone"),
-        inkBrand: fd.get("inkBrand"),
-        inkLot: fd.get("inkLot"),
-        inkExpiry: fd.get("inkExpiry"),
         isMinor: minor,
         legalRepName: fd.get("legalRepName"),
         legalRepDni: fd.get("legalRepDni"),
@@ -142,24 +138,6 @@ export function ConsentForm() {
         {copy.email}
         <input name="email" type="email" autoComplete="email" />
       </label>
-      <label>
-        {copy.bodyZone}
-        <input name="bodyZone" required />
-      </label>
-      <div className="inks">
-        <label>
-          {copy.inkBrand}
-          <input name="inkBrand" />
-        </label>
-        <label>
-          {copy.inkLot}
-          <input name="inkLot" />
-        </label>
-        <label className="span2">
-          {copy.inkExpiry}
-          <input name="inkExpiry" type="month" />
-        </label>
-      </div>
       <label className="check">
         <input type="checkbox" checked={minor} onChange={(e) => setMinor(e.target.checked)} />
         {copy.minor}

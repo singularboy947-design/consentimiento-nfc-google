@@ -18,11 +18,10 @@ export async function POST(req: NextRequest) {
     const address = String(b.address || "").trim();
     const phone = String(b.phone || "").trim();
     const email = String(b.email || "").trim();
-    const bodyZone = String(b.bodyZone || "").trim();
     const signatureUser = String(b.signatureUser || "");
     const legalAccepted = Boolean(b.legalAccepted);
 
-    if (!fullName || !dni || !birthDate || !address || !phone || !bodyZone || !signatureUser || !legalAccepted) {
+    if (!fullName || !dni || !birthDate || !address || !phone || !signatureUser || !legalAccepted) {
       return NextResponse.json({ error: "incomplete" }, { status: 400 });
     }
 
@@ -38,10 +37,10 @@ export async function POST(req: NextRequest) {
       address,
       phone,
       email,
-      bodyZone,
-      inkBrand: String(b.inkBrand || ""),
-      inkLot: String(b.inkLot || ""),
-      inkExpiry: String(b.inkExpiry || ""),
+      bodyZone: "",
+      inkBrand: "",
+      inkLot: "",
+      inkExpiry: "",
       isMinor,
       legalRepName: String(b.legalRepName || ""),
       legalRepDni: String(b.legalRepDni || ""),
@@ -61,8 +60,8 @@ export async function POST(req: NextRequest) {
         pdf_base64, created_at, review_email_at, ip
       ) VALUES (
         ${token}, ${locale}, ${fullName}, ${dni}, ${birthDate}, ${address}, ${phone},
-        ${email || null}, ${bodyZone}, ${String(b.inkBrand || "") || null},
-        ${String(b.inkLot || "") || null}, ${String(b.inkExpiry || "") || null},
+        ${email || null}, ${""}, ${null},
+        ${null}, ${null},
         ${isMinor}, ${String(b.legalRepName || "") || null},
         ${String(b.legalRepDni || "") || null}, ${signatureUser},
         ${String(b.signatureRep || "") || null}, ${true}, ${LEGAL_VERSION},
