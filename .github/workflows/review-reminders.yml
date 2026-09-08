@@ -26,5 +26,8 @@ jobs:
             *) APP_URL="https://${APP_URL}" ;;
           esac
           echo "Pinging ${APP_URL}/api/cron/review-reminders"
-          curl -fsS -G "${APP_URL}/api/cron/review-reminders" --data-urlencode "secret=${CRON_SECRET}"
+          HTTP_CODE=$(curl -sS -o /tmp/cron.json -w "%{http_code}" -G "${APP_URL}/api/cron/review-reminders" --data-urlencode "secret=${CRON_SECRET}" || true)
+          echo "HTTP ${HTTP_CODE}"
+          cat /tmp/cron.json
           echo
+          test "$HTTP_CODE" = "200"
