@@ -82,17 +82,52 @@ details p { color: var(--muted); line-height: 1.45; }
 .thanks { font-size: 1.15rem; text-align: center; padding: 32px 8px; }
 table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
 th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
-.admin { max-width: 960px; overflow-x: auto; }
-.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: #555; }
-.dot.yes { background: #3d9a6a; }
-.consent-list { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
-.consent-card {
+.admin { max-width: 720px; overflow-x: auto; }
+.consent-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.consent-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 14px;
+  padding: 14px 12px;
+  text-decoration: none;
+  color: var(--ink);
 }
-.consent-card header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
-.consent-card a { color: var(--gold); font-size: 0.9rem; }
+.consent-row:hover { border-color: var(--gold); }
+.consent-row .num {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 3.2rem;
+}
+.consent-row .who { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.consent-row .who strong { font-size: 1.05rem; }
+.consent-row .open { color: var(--gold); font-size: 0.85rem; white-space: nowrap; }
+.ficha h2 { font-size: 1.05rem; margin: 22px 0 10px; }
+.ficha .num-lg { color: var(--gold); font-weight: 700; margin: 0 0 4px; }
+.ficha .back { color: var(--gold); text-decoration: none; font-size: 0.9rem; }
+.ficha-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 640px) {
+  .ficha-grid { grid-template-columns: 1fr 1fr; }
+}
+.ficha-field {
+  background: #0f0f10;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+}
+.ficha-field p { margin: 4px 0 0; font-size: 1.05rem; word-break: break-word; }
+.sig-preview {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 8px 0 12px;
+}
+.pdf-link { display: inline-block; margin-top: 12px; color: var(--gold); }
 .job { display: grid; grid-template-columns: 1fr; gap: 0 10px; }
 .job .go { margin-top: 8px; }
 @media (min-width: 640px) {
