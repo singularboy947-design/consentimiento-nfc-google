@@ -25,6 +25,7 @@ export default async function AdminPage() {
       <div className="card admin">
         <h1>Consentimientos</h1>
         <p className="sub">{rows.length} registros · el clic de reseña es quien abrió el enlace de Google (Google no confirma si publicó)</p>
+        {rows.length === 0 && <p className="hint">Aún no hay consentimientos. Cuando alguien envíe el formulario, sale aquí.</p>}
         <table>
           <thead>
             <tr>

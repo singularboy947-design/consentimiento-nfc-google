@@ -1,25 +1,25 @@
-Pausa NFC — tarjeta crédito vertical (Singular Boy)
-==================================================
-Tamaño: 53.98 × 85.60 × 2.80 mm (ISO 7810 en vertical)
-Altura: 1.80 mm · capa 9 (primera 0,25 + 0,20 mm)
-Centro del pozo = centro de la G (y=6.0 mm). NO va abajo.
-Pozo Ø28 · asiento Ø26 · mira Ø24 · pegatina Ø25
-Tapa encima: 1.00 mm. Luego se imprime la G encima.
+Pausa NFC — tarjeta crédito vertical 2 mm (Singular Boy)
+=======================================================
+Tamaño: 53.98 × 85.60 × 2.00 mm (ISO 7810 en vertical)
+Altura pausa: 1.00 mm · capa 5 (primera 0,25 + 0,20 mm) = MITAD
+Centro del pozo = centro de la G (y=0.0 mm, en medio). NO va abajo.
+Pozo Ø32 (holgado) · mira amarilla Ø25 · pegatina Timeskey Ø25
+Suelo 0.40 mm · tapa encima 1.00 mm. Luego se imprime la G encima.
 
 Stock: Timeskey NTAG215 Ø25 mm (Amazon B08LD99GZT).
 Proyecto NUEVO en Flash. Importa 01_cuerpo.stl + 02_acento.stl → Agrupar → NO Reparar.
 Rebanar 0,20 mm Standard @FF AD5X. Cuerpo negro, acento amarillo.
 
 La mira se imprime ANTES de la pausa:
-disco amarillo Ø24 en el suelo, justo donde irá la G.
+disco amarillo Ø25 en el suelo + anillo del pozo Ø32, justo donde irá la G.
 
 En Previsualización:
-1. Slider DERECHO BAJA hasta la capa 9 (~1.80 mm).
-   Hueco REDONDO + círculo amarillo = sitio de la G.
+1. Slider DERECHO BAJA hasta la capa 5 (~1.00 mm).
+   Hueco REDONDO GRANDE + círculo amarillo = sitio de la G.
 2. Clic derecho en esa capa → Añadir pausa.
 3. Imprime.
 
 Cuando pare (mira desde ARRIBA):
 - El círculo amarillo (donde irá la G) = aquí la pegatina.
 - Timeskey Ø25 ENCIMA de ese círculo, hundida, adhesivo ABAJO.
-- Que no sobresalga. No apagues. Continuar.
+- El pozo es Ø32: entra holgado para verlo. Que no sobresalga. No apagues. Continuar.

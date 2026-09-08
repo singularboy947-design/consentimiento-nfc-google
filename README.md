@@ -60,7 +60,7 @@ Cuando Vercel dé la URL, graba el chip con [NFC Tools](https://www.wakdev.com/e
 disenos/stl/singularboy-credito-vertical/
   01_cuerpo.stl     negro
   02_acento.stl     amarillo (estrellas + G + mira del pozo)
-  PAUSA_NFC.txt     capa 9 (1,80 mm)
+  PAUSA_NFC.txt     capa 5 (1,00 mm, mitad)
 ```
 
-54 × 85,6 × 2,8 mm, vertical, más fina que la cartera. Pozo Ø28 / asiento Ø26 / mira Ø24 / pegatina Timeskey Ø25 **bajo la G**. Agrupar, no Reparar. Regenerar: `cd disenos && python3 generar_tarjeta_credito.py`
+54 × 85,6 × **2,0 mm**, vertical. G en el centro, 5 estrellas encima. Pozo Ø32 / mira Ø25 / pegatina Timeskey Ø25 **bajo la G**. Agrupar, no Reparar. Regenerar: `cd disenos && python3 generar_tarjeta_credito.py`
