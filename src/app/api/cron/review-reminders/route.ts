@@ -25,6 +25,7 @@ export async function GET(req: NextRequest) {
 
     let sent = 0;
     let failed = 0;
+    const errors: string[] = [];
     for (const row of due) {
       try {
         await sendReviewReminder({
@@ -41,9 +42,12 @@ export async function GET(req: NextRequest) {
       } catch (e) {
         console.error("[review-reminders]", e);
         failed += 1;
+        if (errors.length < 5) {
+          errors.push(e instanceof Error ? e.message : String(e));
+        }
       }
     }
-    return NextResponse.json({ due: due.length, sent, failed });
+    return NextResponse.json({ due: due.length, sent, failed, errors });
   } catch (e) {
     const message = e instanceof Error ? e.message : "server";
     console.error("[review-reminders]", e);
