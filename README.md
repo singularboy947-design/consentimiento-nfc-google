@@ -44,7 +44,7 @@ Google **no dice** quién publicó una reseña sin la API de Business Profile (e
 4. Storage → Neon → Create Database **o** crea Neon a mano y pega `DATABASE_URL`.
 5. En Neon → SQL Editor → pega y ejecuta [`sql/schema.sql`](sql/schema.sql).
 
-Hobby de Vercel a veces solo deja **1 cron al día**. Si el mail no sale a las 2 h, crea un ping gratis en [cron-job.org](https://cron-job.org) cada 15 min a:
+Un cron cada 15 min en `vercel.json` **hace fallar el deploy en Hobby**. El mail a las 2 h lo dispara GitHub Actions (`Review reminders`). Secrets del repo: `APP_URL` y `CRON_SECRET`. Alternativa: [cron-job.org](https://cron-job.org) cada 15 min a:
 
 `https://TU-APP.vercel.app/api/cron/review-reminders?secret=CRON_SECRET`
 
