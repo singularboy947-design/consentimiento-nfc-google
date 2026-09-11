@@ -3,6 +3,7 @@ import { randomBytes } from "crypto";
 import { sql } from "@/lib/db";
 import { LEGAL_VERSION } from "@/lib/studio";
 import { buildConsentPdf } from "@/lib/pdf";
+import { sendReviewReminder } from "@/lib/email";
 import type { Locale } from "@/lib/legal";
 
 export const runtime = "nodejs";
@@ -27,7 +28,7 @@ export async function POST(req: NextRequest) {
 
     const token = randomBytes(24).toString("hex");
     const createdAt = new Date();
-    const reviewAt = new Date(createdAt.getTime() + 2 * 60 * 60 * 1000);
+    const reviewAt = createdAt;
     const isMinor = Boolean(b.isMinor);
     const pdf = await buildConsentPdf({
       locale,
@@ -68,6 +69,18 @@ export async function POST(req: NextRequest) {
         ${pdf_base64}, ${createdAt.toISOString()}, ${reviewAt.toISOString()}, ${ip}
       )
     `;
+
+    if (email) {
+      try {
+        await sendReviewReminder({ to: email, name: fullName, locale, token });
+        await db`
+          UPDATE consents SET review_sent_at = NOW()
+          WHERE token = ${token} AND review_sent_at IS NULL
+        `;
+      } catch (mailErr) {
+        console.error("[consent] review mail", mailErr);
+      }
+    }
 
     return NextResponse.json({ ok: true });
   } catch (e) {

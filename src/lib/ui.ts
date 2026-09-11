@@ -28,6 +28,8 @@ export const ui = {
     submit: "Confirmar consentimiento",
     sending: "Guardando…",
     thanks: "Consentimiento guardado. Gracias.",
+    thanksMail:
+      "Si has puesto email, te acabamos de enviar el recordatorio de reseña. Mira también spam, correo no deseado o promociones.",
     error: "Revisa los campos y la firma.",
   },
   en: {
@@ -57,6 +59,8 @@ export const ui = {
     submit: "Confirm consent",
     sending: "Saving…",
     thanks: "Consent saved. Thank you.",
+    thanksMail:
+      "If you entered an email, we just sent you the review reminder. Please also check spam, junk or promotions.",
     error: "Check the fields and your signature.",
   },
 } as const;

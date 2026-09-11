@@ -92,6 +92,9 @@ export function ConsentForm() {
     return (
       <div className="card">
         <p className="thanks">{copy.thanks}</p>
+        <p className="hint" style={{ textAlign: "center" }}>
+          {copy.thanksMail}
+        </p>
       </div>
     );
   }
